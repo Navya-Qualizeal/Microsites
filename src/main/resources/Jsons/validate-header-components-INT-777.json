@@ -1,0 +1,79 @@
+{
+  "INT-777": {
+    "TestCaseID": "INT-777",
+    "TestCaseName": "valiadate header components",
+    "Priority": "Medium",
+    "ExpectedResult": "User should be able to see the header components successfully",
+    "Locators": [
+      {
+        "name": "HeaderLogo",
+        "type": "xpath",
+        "value": "//header//img[@class='site-logo']"
+      },
+      {
+        "name": "MainMenu",
+        "type": "css",
+        "value": "header nav.main-menu"
+      },
+      {
+        "name": "SearchIcon",
+        "type": "css",
+        "value": "header .search-icon"
+      },
+      {
+        "name": "LoginButton",
+        "type": "xpath",
+        "value": "//header//a[contains(@href,'login')]"
+      },
+      {
+        "name": "LanguageDropdown",
+        "type": "css",
+        "value": "header .language-dropdown"
+      }
+    ],
+    "HeaderComponents": [
+      {
+        "component": "Logo",
+        "expected": "Visible, clickable, links to homepage"
+      },
+      {
+        "component": "Main Menu",
+        "expected": "Visible, contains all main navigation items"
+      },
+      {
+        "component": "Search Icon",
+        "expected": "Visible, clickable, opens search input"
+      },
+      {
+        "component": "Login Button",
+        "expected": "Visible, clickable, navigates to login page"
+      },
+      {
+        "component": "Language Dropdown",
+        "expected": "Visible, shows language options, can switch language"
+      }
+    ],
+    "EdgeCases": [
+      {
+        "description": "Header components on minimum supported screen width",
+        "screenWidth": 320,
+        "expected": "All header components are visible or accessible via hamburger menu"
+      },
+      {
+        "description": "Header components on maximum supported screen width",
+        "screenWidth": 2560,
+        "expected": "All header components are visible and properly aligned"
+      },
+      {
+        "description": "Header components when user is logged in",
+        "userState": "loggedIn",
+        "expected": "Login button replaced with user profile/avatar"
+      },
+      {
+        "description": "Header components when user is logged out",
+        "userState": "loggedOut",
+        "expected": "Login button is visible"
+      }
+    ]
+  }
+}
