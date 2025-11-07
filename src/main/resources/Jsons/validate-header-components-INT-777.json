@@ -1,0 +1,63 @@
+{
+  "INT-777": {
+    "TestCaseID": "INT-777",
+    "TestCaseName": "valiadate header components",
+    "Priority": "Medium",
+    "Type": "N/A",
+    "ExpectedResult": "User should be able to see the header components successfully",
+    "Locators": [
+      {
+        "name": "Header Logo",
+        "description": "ASTM site logo in header",
+        "locatorType": "xpath",
+        "locatorValue": "//header//img[contains(@alt, 'logo')]"
+      },
+      {
+        "name": "Main Navigation",
+        "description": "Main navigation menu in header",
+        "locatorType": "css",
+        "locatorValue": "header nav.main-navigation"
+      },
+      {
+        "name": "Search Icon",
+        "description": "Search icon/button in header",
+        "locatorType": "css",
+        "locatorValue": "header .search-icon"
+      },
+      {
+        "name": "Login Button",
+        "description": "Login or user account button in header",
+        "locatorType": "xpath",
+        "locatorValue": "//header//button[contains(text(), 'Login') or contains(@class, 'login')]"
+      },
+      {
+        "name": "Language Selector",
+        "description": "Language or region selector in header",
+        "locatorType": "css",
+        "locatorValue": "header .language-selector"
+      }
+    ],
+    "EdgeCases": [
+      {
+        "description": "Header on minimum supported screen width (mobile)",
+        "screenWidth": 320
+      },
+      {
+        "description": "Header on maximum supported screen width (large desktop)",
+        "screenWidth": 2560
+      },
+      {
+        "description": "Header for logged-in user",
+        "userState": "logged-in"
+      },
+      {
+        "description": "Header for guest user",
+        "userState": "guest"
+      },
+      {
+        "description": "Header with slow network",
+        "networkCondition": "slow-3g"
+      }
+    ]
+  }
+}
