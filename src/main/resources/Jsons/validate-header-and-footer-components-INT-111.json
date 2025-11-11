@@ -1,0 +1,63 @@
+{
+  "INT-111": {
+    "TestCaseID": "INT-111",
+    "TestCaseName": "valiadate header and footer components",
+    "Priority": "Medium",
+    "Type": "N/A",
+    "ExpectedResult": "User should be able to see the header and footer components successfully",
+    "Locators": [
+      {
+        "name": "Header",
+        "description": "Header component at the top of the page",
+        "locatorType": "xpath",
+        "locatorValue": "//header"
+      },
+      {
+        "name": "Footer",
+        "description": "Footer component at the bottom of the page",
+        "locatorType": "xpath",
+        "locatorValue": "//footer"
+      },
+      {
+        "name": "Logo",
+        "description": "Logo in the header",
+        "locatorType": "cssSelector",
+        "locatorValue": ".header-logo"
+      },
+      {
+        "name": "NavigationMenu",
+        "description": "Main navigation menu in the header",
+        "locatorType": "cssSelector",
+        "locatorValue": ".header-nav"
+      },
+      {
+        "name": "FooterLinks",
+        "description": "Links section in the footer",
+        "locatorType": "cssSelector",
+        "locatorValue": ".footer-links"
+      }
+    ],
+    "EdgeCases": [
+      {
+        "description": "Header and footer visibility on minimum supported screen width (mobile)",
+        "screenWidth": "320"
+      },
+      {
+        "description": "Header and footer visibility on maximum supported screen width (large desktop)",
+        "screenWidth": "2560"
+      },
+      {
+        "description": "Header and footer visibility for logged-in user",
+        "userState": "logged-in"
+      },
+      {
+        "description": "Header and footer visibility for guest user",
+        "userState": "guest"
+      },
+      {
+        "description": "Header and footer visibility under slow network conditions",
+        "networkCondition": "Slow 3G"
+      }
+    ]
+  }
+}
