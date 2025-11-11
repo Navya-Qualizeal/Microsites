@@ -1,0 +1,63 @@
+{
+  "TC-N001": {
+    "TestCaseID": "TC-N001",
+    "TestCaseName": "valiadate header components",
+    "Priority": "Medium",
+    "Type": "UI",
+    "ExpectedResult": "User should be able to see the header components successfully",
+    "Locators": [
+      {
+        "name": "HeaderLogo",
+        "description": "ASTM logo in the header",
+        "locatorType": "xpath",
+        "locatorValue": "//header//img[@alt='ASTM Logo']"
+      },
+      {
+        "name": "MainMenu",
+        "description": "Main navigation menu",
+        "locatorType": "cssSelector",
+        "locatorValue": "header nav.main-menu"
+      },
+      {
+        "name": "SearchIcon",
+        "description": "Search icon/button in the header",
+        "locatorType": "xpath",
+        "locatorValue": "//header//button[contains(@class,'search')]"
+      },
+      {
+        "name": "UserProfile",
+        "description": "User profile/account icon",
+        "locatorType": "cssSelector",
+        "locatorValue": "header .user-profile"
+      },
+      {
+        "name": "LanguageSelector",
+        "description": "Language selector dropdown",
+        "locatorType": "xpath",
+        "locatorValue": "//header//select[@name='language']"
+      }
+    ],
+    "EdgeCases": [
+      {
+        "description": "Header layout at minimum supported screen width (mobile)",
+        "screenWidth": 320
+      },
+      {
+        "description": "Header layout at maximum supported screen width (large desktop)",
+        "screenWidth": 2560
+      },
+      {
+        "description": "Header visibility for unauthenticated user",
+        "userState": "unauthenticated"
+      },
+      {
+        "description": "Header visibility for authenticated user",
+        "userState": "authenticated"
+      },
+      {
+        "description": "Header under slow network conditions",
+        "networkCondition": "slow-3g"
+      }
+    ]
+  }
+}
