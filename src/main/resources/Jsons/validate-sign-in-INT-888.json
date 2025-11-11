@@ -1,0 +1,73 @@
+{
+  "INT-888": {
+    "TestCaseID": "INT-888",
+    "TestCaseName": "Validate Sign In",
+    "Priority": "Medium",
+    "Type": "N/A",
+    "ExpectedResult": "User should be able to click the Sign In button successfully.",
+    "Locators": [
+      {
+        "name": "signInButton",
+        "description": "The primary Sign In button on the login page.",
+        "locatorType": "id",
+        "locatorValue": "signInBtn"
+      },
+      {
+        "name": "usernameField",
+        "description": "Input field for entering the username.",
+        "locatorType": "name",
+        "locatorValue": "username"
+      },
+      {
+        "name": "passwordField",
+        "description": "Input field for entering the password.",
+        "locatorType": "name",
+        "locatorValue": "password"
+      },
+      {
+        "name": "forgotPasswordLink",
+        "description": "Link to reset the password.",
+        "locatorType": "linkText",
+        "locatorValue": "Forgot Password?"
+      },
+      {
+        "name": "signInErrorMessage",
+        "description": "Error message displayed on invalid sign in.",
+        "locatorType": "cssSelector",
+        "locatorValue": ".signin-error-message"
+      }
+    ],
+    "EdgeCases": [
+      {
+        "description": "Sign In button is disabled when username and password fields are empty.",
+        "screenWidth": "1920",
+        "userState": "emptyFields",
+        "networkCondition": "online"
+      },
+      {
+        "description": "Sign In button is enabled when both fields are filled.",
+        "screenWidth": "1366",
+        "userState": "fieldsFilled",
+        "networkCondition": "online"
+      },
+      {
+        "description": "Sign In button click with slow network.",
+        "screenWidth": "1024",
+        "userState": "fieldsFilled",
+        "networkCondition": "slow3G"
+      },
+      {
+        "description": "Sign In button click with invalid credentials.",
+        "screenWidth": "375",
+        "userState": "invalidCredentials",
+        "networkCondition": "online"
+      },
+      {
+        "description": "Sign In button click on mobile viewport.",
+        "screenWidth": "375",
+        "userState": "fieldsFilled",
+        "networkCondition": "online"
+      }
+    ]
+  }
+}
