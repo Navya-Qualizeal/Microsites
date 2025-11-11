@@ -1,0 +1,98 @@
+// Test Data for Test Case: Verify Search functionality (INT-666)
+// This file provides input and expected output data for search functionality validation, including edge cases.
+{
+  "VerifySearchFunctionality_INT-666": {
+    "TestCaseID": "INT-666",
+    "TestCaseName": "Verify Search functionality",
+    "Priority": "Medium",
+    "SearchTestData": [
+      {
+        "description": "Standard positive search",
+        "input": "Standards",
+        "expectedResult": "Search results related to 'Standards' should be displayed.",
+        "expectResults": true
+      },
+      {
+        "description": "Case-insensitive search",
+        "input": "standards",
+        "expectedResult": "Search results related to 'Standards' should be displayed.",
+        "expectResults": true
+      },
+      {
+        "description": "Partial match",
+        "input": "Stand",
+        "expectedResult": "Search results containing 'Stand' should be displayed.",
+        "expectResults": true
+      },
+      {
+        "description": "Leading/trailing whitespace",
+        "input": "  Standards  ",
+        "expectedResult": "Search results related to 'Standards' should be displayed.",
+        "expectResults": true
+      },
+      {
+        "description": "Special characters",
+        "input": "Standards!@#",
+        "expectedResult": "Search results related to 'Standards' should be displayed or sanitized.",
+        "expectResults": true
+      },
+      {
+        "description": "Empty input",
+        "input": "",
+        "expectedResult": "No results or prompt for input.",
+        "expectResults": false
+      },
+      {
+        "description": "Whitespace only",
+        "input": "   ",
+        "expectedResult": "No results or prompt for input.",
+        "expectResults": false
+      },
+      {
+        "description": "Non-existent term",
+        "input": "qwertyuiopasdfghjkl",
+        "expectedResult": "No results should be displayed.",
+        "expectResults": false
+      },
+      {
+        "description": "Very long string",
+        "input": "S".repeat(256),
+        "expectedResult": "No results or error message for input length.",
+        "expectResults": false
+      },
+      {
+        "description": "Numeric input",
+        "input": "123456",
+        "expectedResult": "Relevant results if any, else no results.",
+        "expectResults": false
+      }
+    ],
+    "Locators": [
+      {
+        "name": "SearchInputBox",
+        "type": "id",
+        "value": "search-box"
+      },
+      {
+        "name": "SearchButton",
+        "type": "id",
+        "value": "search-btn"
+      },
+      {
+        "name": "SearchResultsContainer",
+        "type": "css",
+        "value": ".search-results"
+      },
+      {
+        "name": "NoResultsMessage",
+        "type": "css",
+        "value": ".no-results"
+      },
+      {
+        "name": "FirstResultTitle",
+        "type": "css",
+        "value": ".search-results .result-item:first-child .title"
+      }
+    ]
+  }
+}

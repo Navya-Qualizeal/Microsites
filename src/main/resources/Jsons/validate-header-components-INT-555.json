@@ -1,0 +1,63 @@
+{
+  "INT-555": {
+    "TestCaseID": "INT-555",
+    "TestCaseName": "valiadate header components",
+    "Priority": "Medium",
+    "Type": "UI",
+    "ExpectedResult": "User should be able to see the header components successfully",
+    "Locators": [
+      {
+        "name": "HeaderLogo",
+        "description": "Main logo in the header",
+        "locatorType": "xpath",
+        "locatorValue": "//header//img[@alt='Logo']"
+      },
+      {
+        "name": "NavigationMenu",
+        "description": "Primary navigation menu",
+        "locatorType": "css",
+        "locatorValue": "header nav.menu"
+      },
+      {
+        "name": "SearchIcon",
+        "description": "Search icon/button in header",
+        "locatorType": "css",
+        "locatorValue": "header .search-icon"
+      },
+      {
+        "name": "UserProfileDropdown",
+        "description": "User profile dropdown in header",
+        "locatorType": "xpath",
+        "locatorValue": "//header//div[contains(@class,'user-profile')]"
+      },
+      {
+        "name": "NotificationsBell",
+        "description": "Notifications bell icon in header",
+        "locatorType": "css",
+        "locatorValue": "header .notifications-bell"
+      }
+    ],
+    "EdgeCases": [
+      {
+        "description": "Header components on minimum supported screen width",
+        "screenWidth": 320
+      },
+      {
+        "description": "Header components on maximum supported screen width",
+        "screenWidth": 2560
+      },
+      {
+        "description": "Header components when user is not logged in",
+        "userState": "guest"
+      },
+      {
+        "description": "Header components when user is logged in",
+        "userState": "authenticated"
+      },
+      {
+        "description": "Header components with slow network",
+        "networkCondition": "slow-3g"
+      }
+    ]
+  }
+}
