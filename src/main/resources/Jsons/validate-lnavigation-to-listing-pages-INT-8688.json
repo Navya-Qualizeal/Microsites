@@ -1,0 +1,64 @@
+{
+  "INT-8688": {
+    "TestCaseID": "INT-8688",
+    "TestCaseName": "valiadate lnavigation to listing pages in left side menu",
+    "Priority": "Medium",
+    "Type": "Navigation",
+    "Objective": "User should be able to open the links in left side navigation menu successfully.",
+    "ExpectedResult": "System should navigate to the Agendas list page successfully without any errors.",
+    "Locators": [
+      {
+        "name": "LeftMenu_Agendas",
+        "description": "Agendas link in left side navigation menu",
+        "locatorType": "xpath",
+        "locatorValue": "//nav[@id='left-menu']//a[contains(text(),'Agendas')]"
+      },
+      {
+        "name": "LeftMenu_Committees",
+        "description": "Committees link in left side navigation menu",
+        "locatorType": "xpath",
+        "locatorValue": "//nav[@id='left-menu']//a[contains(text(),'Committees')]"
+      },
+      {
+        "name": "LeftMenu_Events",
+        "description": "Events link in left side navigation menu",
+        "locatorType": "xpath",
+        "locatorValue": "//nav[@id='left-menu']//a[contains(text(),'Events')]"
+      },
+      {
+        "name": "LeftMenu_Documents",
+        "description": "Documents link in left side navigation menu",
+        "locatorType": "xpath",
+        "locatorValue": "//nav[@id='left-menu']//a[contains(text(),'Documents')]"
+      },
+      {
+        "name": "LeftMenu_Contacts",
+        "description": "Contacts link in left side navigation menu",
+        "locatorType": "xpath",
+        "locatorValue": "//nav[@id='left-menu']//a[contains(text(),'Contacts')]"
+      }
+    ],
+    "EdgeCases": [
+      {
+        "description": "Navigation menu is collapsed/minimized",
+        "screenWidth": "320"
+      },
+      {
+        "description": "Navigation menu is expanded on large screen",
+        "screenWidth": "1920"
+      },
+      {
+        "description": "User is not logged in (if applicable)",
+        "userState": "guest"
+      },
+      {
+        "description": "Network is slow",
+        "networkCondition": "slow3g"
+      },
+      {
+        "description": "Menu item is disabled or not visible",
+        "userState": "restricted"
+      }
+    ]
+  }
+}
