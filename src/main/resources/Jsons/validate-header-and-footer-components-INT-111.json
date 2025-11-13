@@ -1,0 +1,149 @@
+{
+  "INT-111": {
+    "TestCaseID": "INT-111",
+    "TestCaseName": "valiadate header and footer components",
+    "Priority": "Medium",
+    "Type": "UI",
+    "ExpectedResult": "User should be able to see the footer components successfully",
+    "Locators": [
+      {
+        "name": "HeaderContainer",
+        "description": "Main header container",
+        "locatorType": "xpath",
+        "locatorValue": "//header[@id='main-header']"
+      },
+      {
+        "name": "FooterContainer",
+        "description": "Main footer container",
+        "locatorType": "xpath",
+        "locatorValue": "//footer[@id='main-footer']"
+      },
+      {
+        "name": "FooterLink1",
+        "description": "First footer link",
+        "locatorType": "css",
+        "locatorValue": "footer .footer-links a:nth-child(1)"
+      },
+      {
+        "name": "FooterLink2",
+        "description": "Second footer link",
+        "locatorType": "css",
+        "locatorValue": "footer .footer-links a:nth-child(2)"
+      },
+      {
+        "name": "FooterCopyright",
+        "description": "Footer copyright text",
+        "locatorType": "css",
+        "locatorValue": "footer .copyright"
+      }
+    ],
+    "HeaderComponents": {
+      "Logo": {
+        "locator": "//header[@id='main-header']//img[@class='logo']",
+        "altText": "ASTM International Logo"
+      },
+      "MenuItems": [
+        "Home",
+        "About",
+        "Membership",
+        "Standards",
+        "News",
+        "Help"
+      ]
+    },
+    "FooterComponents": {
+      "Links": [
+        {
+          "text": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "text": "Terms of Use",
+          "url": "/terms-of-use"
+        },
+        {
+          "text": "Contact Us",
+          "url": "/contact"
+        },
+        {
+          "text": "Sitemap",
+          "url": "/sitemap"
+        },
+        {
+          "text": "Accessibility",
+          "url": "/accessibility"
+        }
+      ],
+      "SocialMedia": [
+        {
+          "platform": "LinkedIn",
+          "icon": "fa-linkedin",
+          "url": "https://www.linkedin.com/company/astm-international"
+        },
+        {
+          "platform": "Twitter",
+          "icon": "fa-twitter",
+          "url": "https://twitter.com/astmintl"
+        },
+        {
+          "platform": "Facebook",
+          "icon": "fa-facebook",
+          "url": "https://www.facebook.com/ASTMInternational"
+        }
+      ],
+      "Copyright": {
+        "text": "© 2024 ASTM International. All rights reserved."
+      }
+    },
+    "TestData": {
+      "footerLinkTexts": [
+        "Privacy Policy",
+        "Terms of Use",
+        "Contact Us",
+        "Sitemap",
+        "Accessibility"
+      ],
+      "footerLinkUrls": [
+        "/privacy-policy",
+        "/terms-of-use",
+        "/contact",
+        "/sitemap",
+        "/accessibility"
+      ],
+      "socialMediaPlatforms": [
+        "LinkedIn",
+        "Twitter",
+        "Facebook"
+      ],
+      "socialMediaUrls": [
+        "https://www.linkedin.com/company/astm-international",
+        "https://twitter.com/astmintl",
+        "https://www.facebook.com/ASTMInternational"
+      ],
+      "expectedCopyright": "© 2024 ASTM International. All rights reserved."
+    },
+    "EdgeCases": [
+      {
+        "description": "Minimum supported screen width",
+        "screenWidth": 320
+      },
+      {
+        "description": "Maximum supported screen width",
+        "screenWidth": 2560
+      },
+      {
+        "description": "Footer links open in new tab",
+        "action": "clickFooterLink",
+        "expect": "newTab"
+      },
+      {
+        "description": "Footer visibility when user is not logged in",
+        "userState": "guest"
+      },
+      {
+        "description": "Footer visibility when user is logged in",
+        "userState": "loggedIn"
+      }
+    ]
+  }
+}
