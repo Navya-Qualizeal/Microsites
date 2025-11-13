@@ -1,0 +1,68 @@
+{
+  "INT-8633": {
+    "TestCaseID": "INT-8633",
+    "TestCaseName": "Validate User able to add products to cart",
+    "Priority": "Medium",
+    "Type": "Functional",
+    "Objective": "User should add a research report to the cart",
+    "ExpectedResult": "User should see the product name with quantity and price of the same.",
+    "Locators": [
+      {
+        "name": "searchBox",
+        "description": "Input field for product search",
+        "locatorType": "id",
+        "locatorValue": "search-input"
+      },
+      {
+        "name": "searchButton",
+        "description": "Button to trigger product search",
+        "locatorType": "css",
+        "locatorValue": ".search-btn"
+      },
+      {
+        "name": "productResult",
+        "description": "Product tile in search results",
+        "locatorType": "xpath",
+        "locatorValue": "//div[contains(@class,'product-tile')][1]"
+      },
+      {
+        "name": "addToCartButton",
+        "description": "Button to add product to cart",
+        "locatorType": "css",
+        "locatorValue": ".add-to-cart-btn"
+      },
+      {
+        "name": "cartSummary",
+        "description": "Cart summary displaying product, quantity and price",
+        "locatorType": "id",
+        "locatorValue": "cart-summary"
+      }
+    ],
+    "EdgeCases": [
+      {
+        "description": "Add maximum allowed quantity of a product to cart",
+        "quantity": 99
+      },
+      {
+        "description": "Add minimum allowed quantity (1) to cart",
+        "quantity": 1
+      },
+      {
+        "description": "Attempt to add zero quantity (should not allow)",
+        "quantity": 0
+      },
+      {
+        "description": "Add product when cart already has other items",
+        "cartState": "nonEmpty"
+      },
+      {
+        "description": "Add the same product multiple times (should increment quantity)",
+        "repeatAdd": true
+      },
+      {
+        "description": "Network interruption during add to cart",
+        "networkCondition": "offline"
+      }
+    ]
+  }
+}
