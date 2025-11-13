@@ -1,0 +1,147 @@
+{
+  "INT-111": {
+    "TestCaseID": "INT-111",
+    "TestCaseName": "valiadate header and footer components",
+    "Priority": "Medium",
+    "Type": "UI",
+    "ExpectedResult": "User should be able to see the footer components successfully",
+    "Locators": [
+      {
+        "name": "FooterMainContainer",
+        "description": "Main container for footer section",
+        "locatorType": "xpath",
+        "locatorValue": "//footer[@id='main-footer']"
+      },
+      {
+        "name": "FooterLinksSection",
+        "description": "Section containing all footer links",
+        "locatorType": "css",
+        "locatorValue": ".footer-links"
+      },
+      {
+        "name": "FooterLogo",
+        "description": "Footer logo image",
+        "locatorType": "css",
+        "locatorValue": ".footer-logo img"
+      },
+      {
+        "name": "FooterSocialIcons",
+        "description": "Social media icons in footer",
+        "locatorType": "css",
+        "locatorValue": ".footer-social-icons a"
+      },
+      {
+        "name": "FooterCopyright",
+        "description": "Copyright text in footer",
+        "locatorType": "xpath",
+        "locatorValue": "//footer//span[contains(@class,'copyright')]"
+      }
+    ],
+    "FooterComponents": {
+      "Logo": {
+        "src": "https://example.com/assets/footer-logo.png",
+        "alt": "Company Logo"
+      },
+      "Links": [
+        {
+          "text": "About Us",
+          "url": "/about-us"
+        },
+        {
+          "text": "Contact",
+          "url": "/contact"
+        },
+        {
+          "text": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "text": "Terms of Service",
+          "url": "/terms-of-service"
+        },
+        {
+          "text": "Careers",
+          "url": "/careers"
+        }
+      ],
+      "SocialIcons": [
+        {
+          "platform": "Facebook",
+          "url": "https://facebook.com/astm",
+          "icon": "fa-facebook"
+        },
+        {
+          "platform": "Twitter",
+          "url": "https://twitter.com/astm",
+          "icon": "fa-twitter"
+        },
+        {
+          "platform": "LinkedIn",
+          "url": "https://linkedin.com/company/astm",
+          "icon": "fa-linkedin"
+        },
+        {
+          "platform": "YouTube",
+          "url": "https://youtube.com/astm",
+          "icon": "fa-youtube"
+        }
+      ],
+      "Copyright": {
+        "text": "© 2024 ASTM International. All rights reserved."
+      }
+    },
+    "TestData": {
+      "footerLinks": [
+        "/about-us",
+        "/contact",
+        "/privacy-policy",
+        "/terms-of-service",
+        "/careers"
+      ],
+      "footerLinkTexts": [
+        "About Us",
+        "Contact",
+        "Privacy Policy",
+        "Terms of Service",
+        "Careers"
+      ],
+      "socialPlatforms": [
+        "Facebook",
+        "Twitter",
+        "LinkedIn",
+        "YouTube"
+      ],
+      "socialLinks": [
+        "https://facebook.com/astm",
+        "https://twitter.com/astm",
+        "https://linkedin.com/company/astm",
+        "https://youtube.com/astm"
+      ],
+      "logoSrc": "https://example.com/assets/footer-logo.png",
+      "logoAlt": "Company Logo",
+      "copyrightText": "© 2024 ASTM International. All rights reserved."
+    },
+    "EdgeCases": [
+      {
+        "description": "Footer on minimum supported screen width (mobile)",
+        "screenWidth": 320
+      },
+      {
+        "description": "Footer on maximum supported screen width (ultra-wide)",
+        "screenWidth": 2560
+      },
+      {
+        "description": "Footer with missing logo image",
+        "logoSrc": ""
+      },
+      {
+        "description": "Footer with no social icons",
+        "socialIcons": []
+      },
+      {
+        "description": "Footer with long copyright text",
+        "copyrightText": "© 2024 ASTM International. All rights reserved. This is a very long copyright statement used for boundary testing."
+      }
+    ]
+  }
+}
